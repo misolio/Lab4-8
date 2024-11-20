@@ -1,0 +1,2 @@
+Chess,BoardGame,50,10,Wood,6,Strategy,None,2,4,60
+Monopoly,BoardGame,100,20,Cardboard,8,Family,Classic,2,6,90
