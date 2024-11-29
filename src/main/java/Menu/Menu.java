@@ -1,7 +1,7 @@
 package Menu;
 
 import Control.AddToy;
-import Control.DeletToy;
+import Control.DeleteToy;
 import Control.FindToy;
 import Control.SortToys;
 import Toy.Toy;
@@ -23,7 +23,7 @@ public class Menu {
         menuItems.put(1, new AddToy(toys, money));
         menuItems.put(2, new SortToys(toys));
         menuItems.put(3, new FindToy(toys));
-        menuItems.put(4, new DeletToy(toys));
+        menuItems.put(4, new DeleteToy(toys));
     }
 
     public void setScanner(Scanner scanner) {
@@ -32,7 +32,7 @@ public class Menu {
 
     public void displayMenu() {
         System.out.println("""
-        Оберіть команду:
+        \nОберіть команду:
         1. Додати іграшку до кімнати
         2. Сортувати іграшки за параметром
         3. Знайти іграшку за параметром

@@ -1,7 +1,6 @@
 package Control;
 
 import Toy.Toy;
-import Menu.Command;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,21 +12,21 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-public class DeletToyTest {
+public class DeleteToyTest {
     private List<Toy> toys;
-    private DeletToy deletToy;
+    private DeleteToy deleteToy;
     private Scanner mockScanner;
 
     @BeforeEach
     public void setUp() {
         toys = new ArrayList<>();
-        deletToy = new DeletToy(toys);
+        deleteToy = new DeleteToy(toys);
         mockScanner = mock(Scanner.class);
     }
 
     @Test
     public void testExecuteWithEmptyList() {
-        deletToy.execute();
+        deleteToy.execute();
         assertEquals(0, toys.size());
     }
 
@@ -44,8 +43,8 @@ public class DeletToyTest {
 
         when(mockScanner.nextInt()).thenReturn(1);
 
-        deletToy.setScanner(mockScanner); // Assuming you modify DeletToy to accept a scanner
-        deletToy.execute();
+        deleteToy.setScanner(mockScanner); // Assuming you modify DeletToy to accept a scanner
+        deleteToy.execute();
 
         assertEquals(1, toys.size());
         assertEquals("Toy2", toys.get(0).toString());
@@ -64,8 +63,8 @@ public class DeletToyTest {
 
         when(mockScanner.nextInt()).thenReturn(3);
 
-        deletToy.setScanner(mockScanner); // Assuming you modify DeletToy to accept a scanner
-        deletToy.execute();
+        deleteToy.setScanner(mockScanner); // Assuming you modify DeletToy to accept a scanner
+        deleteToy.execute();
 
         assertEquals(2, toys.size());
     }

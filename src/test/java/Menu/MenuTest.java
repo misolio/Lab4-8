@@ -1,7 +1,7 @@
 package Menu;
 
 import Control.AddToy;
-import Control.DeletToy;
+import Control.DeleteToy;
 import Control.FindToy;
 import Control.SortToys;
 import Toy.Toy;
@@ -70,15 +70,15 @@ public class MenuTest {
 
     @Test
     public void testExecuteDeletToy() {
-        DeletToy mockDeletToy = Mockito.mock(DeletToy.class);
-        menu.menuItems.put(4, mockDeletToy);
+        DeleteToy mockDeleteToy = Mockito.mock(DeleteToy.class);
+        menu.menuItems.put(4, mockDeleteToy);
 
         when(mockScanner.nextInt()).thenReturn(4);
 
         menu.setScanner(mockScanner);
         menu.executeCommand(4);
 
-        verify(mockDeletToy, times(1)).execute();
+        verify(mockDeleteToy, times(1)).execute();
     }
 
     @Test

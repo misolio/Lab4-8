@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import Menu.Menu;
 import Toy.Toy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +14,9 @@ public class Main {
     }
 
     public static void runProgram(Menu menu, Scanner input) {
+        Logger logger = LoggerFactory.getLogger(Main.class);
+        logger.error("Це тестове повідомлення про помилку");
+
         int command;
         do {
             menu.displayMenu();

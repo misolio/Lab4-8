@@ -4,11 +4,11 @@ import Menu.Command;
 import java.util.List;
 import java.util.Scanner;
 
-public class DeletToy implements Command {
+public class DeleteToy implements Command {
     private List<Toy> toys;
     private Scanner scanner;
 
-    public DeletToy(List<Toy> toys) {
+    public DeleteToy(List<Toy> toys) {
         this.toys = toys;
         this.scanner = new Scanner(System.in);
     }
