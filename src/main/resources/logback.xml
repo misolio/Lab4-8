@@ -13,7 +13,7 @@
         <smtpHost>smtp.gmail.com</smtpHost>
         <smtpPort>587</smtpPort>
         <username>solomiia.oliinyk.oi.2023@lpnu.ua</username>
-        <password>bawopspquosqocyf</password>
+        <password>soloma2049</password>
         <from>solomiia.oliinyk.oi.2023@lpnu.ua</from>
         <to>solomiia.oliinyk.oi.2023@lpnu.ua</to>
         <subject>[CRITICAL ERROR] Logback Notification</subject>
@@ -22,13 +22,11 @@
         </layout>
     </appender>
 
-    <root level="warn">
+    <root level="debug">
         <appender-ref ref="FILE"/>
-    </root>
-
-    <root level="error">
         <appender-ref ref="EMAIL"/>
     </root>
+
 
 
 </configuration>

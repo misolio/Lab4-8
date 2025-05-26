@@ -1,0 +1,300 @@
+/* styles.css */
+
+/* 🌿 Глобальні налаштування */
+.root {
+    -fx-background-image: url("/img/photo_2025-05-22_19-26-57.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 15px;
+}
+
+/* Картка іграшки */
+.toy-card {
+    -fx-background-color: #fffaf2; /* айворі */
+    -fx-border-color: #a47551;     /* теплий коричневий */
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+    -fx-spacing: 16;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+}
+
+/* Ліва панель */
+.menu-panel {
+    -fx-background-color: #f4eee0;
+    -fx-border-color: #d9cfc0;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+    -fx-spacing: 12;
+}
+
+/* Кнопки */
+.button {
+    -fx-background-color: #eac696;
+    -fx-text-fill: #5c3d2e;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 10 16 10 16;
+
+}
+.menu-panel .button {
+    -fx-min-width: 180px;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color: #f3d5b5;
+}
+
+/* 🏷️ Написи */
+.label {
+    -fx-text-fill: #3e2c1c;
+    -fx-font-size: 14px;
+}
+
+/* 🧾 Картки */
+.card {
+    -fx-background-color: #fffaf2;         /* Кремовий */
+    -fx-border-color: #e0d2b4;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 16;
+    -fx-spacing: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 6, 0.0, 0, 2);
+}
+
+/* 📜 ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+}
+
+/* 📦 Layout panels */
+.hbox, .vbox {
+    -fx-spacing: 16;
+    -fx-padding: 20;
+}
+/* 🪟 Діалогове вікно */
+.dialog-pane {
+    -fx-background-color: #fffaf2;       /* Теплий світлий фон */
+    -fx-border-color: #a47551;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-padding: 20;
+}
+
+/* Заголовок діалогового вікна */
+.dialog-pane .header-panel {
+    -fx-background-color: transparent;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #3e2c1c;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Кнопки у вікні */
+.dialog-pane .button {
+    -fx-background-color: #eac696;
+    -fx-text-fill: #5c3d2e;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16 8 16;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #f3d5b5;
+}
+
+/* Поле введення */
+.dialog-pane .text-field {
+    -fx-background-color: #fff;
+    -fx-border-color: #d9cfc0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+}
+.combo-box {
+    -fx-background-color: #fffaf2;
+    -fx-border-color: #a47551;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 6;
+    -fx-font-size: 14px;
+    -fx-text-fill: #3e2c1c;
+}
+
+.combo-box:hover,
+.combo-box:focused {
+    -fx-border-color: #eac696;
+    -fx-background-color: #fdf5e6;
+}
+
+/* 🌟 Alert-вікна (усі типи) */
+.alert {
+    -fx-background-color: #fffaf2;
+}
+
+/* Стиль діалогового контейнера */
+.alert .dialog-pane {
+    -fx-background-color: #fffaf2;
+    -fx-border-color: #a47551;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+}
+
+/* Заголовок (наприклад, "Помилка", "Успішно") */
+.alert .header-panel {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 10 0;
+}
+
+.alert .header-panel .label {
+    -fx-text-fill: #3e2c1c;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Текст повідомлення */
+.alert .content.label {
+    -fx-text-fill: #5c3d2e;
+    -fx-font-size: 14px;
+}
+
+/* Кнопки */
+.alert .button {
+    -fx-background-color: #eac696;
+    -fx-text-fill: #5c3d2e;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16;
+}
+
+.alert .button:hover {
+    -fx-background-color: #f3d5b5;
+}
+.text-field:focused,
+.combo-box:focused {
+    -fx-border-color: #a47551;
+    -fx-background-color: #fffaf2;
+    -fx-effect: dropshadow(three-pass-box, rgba(164, 117, 81, 0.4), 6, 0, 0, 0);
+}
+
+/* 📋 Стилізація вікна вибору іграшок */
+.toy-selection-dialog {
+    -fx-background-color: #fffaf2;
+    -fx-border-color: #a47551;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+}
+
+/* 📃 Список іграшок (ListView) */
+.list-view {
+    -fx-background-color: #fffaf2;        /* Кремовий фон */
+    -fx-border-color: transparent;        /* Без рамок */
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-control-inner-background: #fffaf2;
+    -fx-selection-bar: #f3d5b5;           /* Колір вибраної клітинки */
+    -fx-selection-bar-non-focused: #f4e4cd;
+    -fx-cell-size: 48px;                  /* Висота елементу */
+}
+
+/* 🧱 Одна клітинка */
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: #a47551;
+    -fx-border-radius: 10px;             /* ⬅️ Округлі краї рамки */
+    -fx-background-radius: 10px;         /* ⬅️ Округлі краї фону */
+    -fx-text-fill: #3e2c1c;
+    -fx-font-size: 14px;
+    -fx-padding: 10;
+    -fx-margin: 4;                        /* (опційно) для відступів між клітинками */
+}
+
+/* 👆 Hover ефект */
+.list-cell:hover {
+    -fx-background-color: #fdf0db;
+    -fx-background-radius: 10px;         /* ⬅️ підтримати округлість */
+}
+
+/* ✅ Вибраний елемент */
+.list-cell:selected {
+    -fx-background-color: #f3d5b5;
+    -fx-background-radius: 10px;         /* ⬅️ підтримати округлість */
+    -fx-border-radius: 10px;
+    -fx-text-fill: #3e2c1c;
+    -fx-font-weight: bold;
+}
+
+
+/* 🔻 Скролбар */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #eac696;
+    -fx-background-insets: 2;
+    -fx-background-radius: 6;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #d3a772;
+}
+
+.toy-card {
+    -fx-background-color: #fffefc;
+    -fx-border-color: #d3a772;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-pref-width: 100%; /* дозволити картці займати всю ширину */
+    -fx-alignment: center-left;
+    -fx-padding: 12;
+}
+
+.toy-card-text {
+    -fx-font-size: 14px;
+    -fx-fill: #5c3e27;
+    -fx-text-alignment: justify;
+    -fx-wrap-text: true;
+}
+
+/* 👋 Вітальне вікно */
+.welcome-pane {
+    -fx-background-color: #fffaf2;
+    -fx-padding: 40;
+    -fx-background-image: url("/img/photo_2025-05-22_20-55-47.png");
+}
+
+.welcome-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5c3d2e;
+}
+
+.welcome-button {
+    -fx-background-color: #eac696;
+    -fx-text-fill: #3e2c1c;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 16 10 16;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.welcome-button:hover {
+    -fx-background-color: #d3a772;
+}
