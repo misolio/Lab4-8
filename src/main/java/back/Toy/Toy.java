@@ -57,9 +57,9 @@ public abstract class Toy {
     @Override
     public String toString() {
         return "'" + name + '\'' +
-                ",\n тип: '" + type + '\'' +
-                ",\n ціна:" + price +
-                ",\n матеріал:'" + material + '\'' +
-                ",\n вікові обмеження:" + ageRestrictions;
+                ",\nтип: " + type +
+                ",\nціна:" + price +
+                ",\nматеріал:" + material +
+                ",\nвікові обмеження:" + ageRestrictions;
     }
 }

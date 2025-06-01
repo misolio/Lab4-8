@@ -2,13 +2,13 @@ package back.Loader;
 
 import back.Toy.Transport;
 import back.Toy.Toy;
+import back.Log.LoggerUtility;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class TransportLoader implements Loading{
+public class TransportLoader implements Loading {
     private final Connection conn;
 
     public TransportLoader(Connection conn) {
@@ -17,13 +17,21 @@ public class TransportLoader implements Loading{
 
     @Override
     public Toy getToyById(int toyId) {
+        LoggerUtility.logInfo("Завантаження транспортної іграшки за ID: " + toyId);
         List<Toy> result = load(toyId);
-        return result.isEmpty() ? null : result.get(0);
+        if (result.isEmpty()) {
+            LoggerUtility.logWarning("Не знайдено транспортної іграшки з ID: " + toyId);
+            return null;
+        }
+        return result.get(0);
     }
+
     @Override
     public List<Toy> load(int toyId) {
         List<Toy> list = new ArrayList<>();
         try {
+            LoggerUtility.logDebug("Виконання SELECT з toy і transport для ID: " + toyId);
+
             String toySql = "SELECT * FROM toy WHERE toy_id = ?";
             PreparedStatement toyStmt = conn.prepareStatement(toySql);
             toyStmt.setInt(1, toyId);
@@ -51,17 +59,25 @@ public class TransportLoader implements Loading{
                             transportRs.getBoolean("on_electric_control")
                     );
                     list.add(toy);
+                    LoggerUtility.logInfo("✔ Завантажено транспортну іграшку: " + toy.getName());
+                } else {
+                    LoggerUtility.logWarning("✖ Не знайдено запису у transport з ID: " + toyId);
                 }
+            } else {
+                LoggerUtility.logWarning("✖ Не знайдено запису у toy з ID: " + toyId);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LoggerUtility.logError("Помилка під час завантаження транспортної іграшки з ID: " + toyId, e);
         }
         return list;
     }
+
     @Override
     public List<Toy> loadAll() {
         List<Toy> list = new ArrayList<>();
         try {
+            LoggerUtility.logInfo("Завантаження всіх транспортних іграшок...");
+
             String sql = """
                 SELECT t.*, p.* FROM toy t
                 JOIN transport p ON t.toy_id = p.transport_id
@@ -83,12 +99,14 @@ public class TransportLoader implements Loading{
                         rs.getInt("width"),
                         rs.getInt("number_of_wheels"),
                         rs.getBoolean("on_electric_control")
-
                 );
                 list.add(toy);
             }
+
+            LoggerUtility.logInfo("✔ Завантажено " + list.size() + " транспортних іграшок.");
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            LoggerUtility.logError("Помилка при завантаженні всіх транспортних іграшок", e);
         }
         return list;
     }

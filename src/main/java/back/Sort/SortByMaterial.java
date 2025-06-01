@@ -1,5 +1,6 @@
 package back.Sort;
 
+import back.Log.LoggerUtility;
 import back.Toy.Toy;
 
 import java.util.Comparator;
@@ -12,7 +13,8 @@ public class SortByMaterial implements Sorting{
     }
     @Override
     public void sort() {
+        LoggerUtility.logInfo("Сортування іграшок за матеріалом розпочато...");
         toys.sort(Comparator.comparing(Toy::getMaterial));
-        System.out.println("Іграшки відсортовано за матеріалом.");
+        LoggerUtility.logInfo("✔ Іграшки відсортовано за матеріалом.");
     }
 }

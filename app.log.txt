@@ -1,0 +1,61 @@
+2025-06-02 00:53:33 ERROR front.Main - 💥 Помилка! Це тестова помилка.
+2025-06-02 00:53:34 ERROR back.Log.LoggerUtility - Нова критична помилка!
+java.lang.RuntimeException: Rand=0.6873646964482477
+	at Lab4@1.0-SNAPSHOT/front.Main.start(Main.java:26)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:846)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-06-02 00:56:41 INFO  back.Log.LoggerUtility - Ініціалізація AddToyDialog з бюджетом: 1000
+2025-06-02 00:56:41 INFO  back.Log.LoggerUtility - ToyAdder створено з бюджетом: 1000
+2025-06-02 00:56:41 INFO  back.Log.LoggerUtility - Виконання команди додавання іграшки через AddToyDialog...
+2025-06-02 00:56:59 INFO  back.Log.LoggerUtility - Завантаження всіх настільних ігор...
+2025-06-02 00:56:59 INFO  back.Log.LoggerUtility - ✔ Завантажено 5 настільних ігор.
+2025-06-02 00:57:15 INFO  back.Log.LoggerUtility - ✔ Іграшку "Monopoly Classic" додано. Залишок бюджету: 500
+2025-06-02 00:57:25 INFO  back.Log.LoggerUtility - ✔ Додавання іграшки завершено.
+2025-06-02 00:57:25 INFO  back.Log.LoggerUtility - Отримання поточного бюджету: 500
+2025-06-02 01:01:32 INFO  back.Log.LoggerUtility - Ініціалізація AddToyDialog з бюджетом: 500
+2025-06-02 01:01:32 INFO  back.Log.LoggerUtility - ToyAdder створено з бюджетом: 500
+2025-06-02 01:01:32 INFO  back.Log.LoggerUtility - Виконання команди додавання іграшки через AddToyDialog...
+2025-06-02 01:01:34 INFO  back.Log.LoggerUtility - Завантаження всіх настільних ігор...
+2025-06-02 01:01:34 INFO  back.Log.LoggerUtility - ✔ Завантажено 5 настільних ігор.
+2025-06-02 01:01:37 INFO  back.Log.LoggerUtility - ✔ Іграшку "Chess Set" додано. Залишок бюджету: 100
+2025-06-02 01:01:52 INFO  back.Log.LoggerUtility - Завантаження всіх ляльок...
+2025-06-02 01:01:52 INFO  back.Log.LoggerUtility - ✔ Завантажено 5 ляльок.
+2025-06-02 01:01:54 WARN  back.Log.LoggerUtility - ✖ Недостатньо бюджету для іграшки "Ken Adventurer" (ціна: 340, залишок: 100)
+2025-06-02 01:02:04 INFO  back.Log.LoggerUtility - ✔ Додавання іграшки завершено.
+2025-06-02 01:02:04 INFO  back.Log.LoggerUtility - Отримання поточного бюджету: 100
+2025-06-02 01:05:15 INFO  back.Log.LoggerUtility - ToySorter ініціалізовано. Доступні методи сортування: [1, 2, 3, 4, 5]
+2025-06-02 01:05:15 INFO  back.Log.LoggerUtility - Запуск сортування іграшок (через діалог)
+2025-06-02 01:05:20 INFO  back.Log.LoggerUtility - Сортування за вибором: 4 (4. Ім'я)
+2025-06-02 01:05:20 INFO  back.Log.LoggerUtility - Сортування іграшок за ім'ям розпочато...
+2025-06-02 01:05:20 INFO  back.Log.LoggerUtility - ✔ Іграшки відсортовано за ім'ям.
+2025-06-02 01:05:20 INFO  back.Log.LoggerUtility - ✔ Сортування виконано за параметром: 4. Ім'я
+2025-06-02 01:05:26 INFO  back.Log.LoggerUtility - ToySorter ініціалізовано. Доступні методи сортування: [1, 2, 3, 4, 5]
+2025-06-02 01:05:26 INFO  back.Log.LoggerUtility - Запуск сортування іграшок (через діалог)
+2025-06-02 01:05:30 INFO  back.Log.LoggerUtility - Сортування за вибором: 3 (3. Матеріал)
+2025-06-02 01:05:30 INFO  back.Log.LoggerUtility - Сортування іграшок за матеріалом розпочато...
+2025-06-02 01:05:30 INFO  back.Log.LoggerUtility - ✔ Іграшки відсортовано за матеріалом.
+2025-06-02 01:05:30 INFO  back.Log.LoggerUtility - ✔ Сортування виконано за параметром: 3. Матеріал
+2025-06-02 01:05:40 INFO  back.Log.LoggerUtility - ToySorter ініціалізовано. Доступні методи сортування: [1, 2, 3, 4, 5]
+2025-06-02 01:05:40 INFO  back.Log.LoggerUtility - Запуск сортування іграшок (через діалог)
+2025-06-02 01:05:44 INFO  back.Log.LoggerUtility - Сортування за вибором: 4 (4. Ім'я)
+2025-06-02 01:05:44 INFO  back.Log.LoggerUtility - Сортування іграшок за ім'ям розпочато...
+2025-06-02 01:05:44 INFO  back.Log.LoggerUtility - ✔ Іграшки відсортовано за ім'ям.
+2025-06-02 01:05:44 INFO  back.Log.LoggerUtility - ✔ Сортування виконано за параметром: 4. Ім'я
+2025-06-02 01:08:20 INFO  back.Log.LoggerUtility - ToyFinder ініціалізовано. Доступні фільтри: [1, 2, 3, 4, 5]
+2025-06-02 01:08:20 INFO  back.Log.LoggerUtility - FindToyDialog ініціалізовано.
+2025-06-02 01:08:20 INFO  back.Log.LoggerUtility - Розпочато пошук іграшок (через діалог).
+2025-06-02 01:08:21 INFO  back.Log.LoggerUtility - Результати фільтрації скинуто. Всього іграшок: 2
+2025-06-02 01:08:32 INFO  back.Log.LoggerUtility - Застосовується фільтр [2] зі значенням: 410
+2025-06-02 01:10:56 INFO  back.Log.LoggerUtility - ToyDeleter ініціалізовано. Кількість іграшок: 2
+2025-06-02 01:10:56 INFO  back.Log.LoggerUtility - Ініціалізовано DeleteToyDialog для іграшки: Chess Set
+2025-06-02 01:10:56 INFO  back.Log.LoggerUtility - Спроба видалення іграшки: Chess Set
+2025-06-02 01:11:07 INFO  back.Log.LoggerUtility - Підтвердження видалення іграшки "Chess Set": true
+2025-06-02 01:11:07 INFO  back.Log.LoggerUtility - ✔ Іграшку "Chess Set" успішно видалено.
+2025-06-02 01:11:07 INFO  back.Log.LoggerUtility - ✔ Іграшку успішно видалено: Chess Set

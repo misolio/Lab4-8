@@ -2,6 +2,7 @@ package back.Loader;
 
 import back.Toy.PlushToy;
 import back.Toy.Toy;
+import back.Log.LoggerUtility;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,14 +18,21 @@ public class PlushToyLoader implements Loading {
 
     @Override
     public Toy getToyById(int toyId) {
+        LoggerUtility.logInfo("Завантаження м’якої іграшки за ID: " + toyId);
         List<Toy> result = load(toyId);
-        return result.isEmpty() ? null : result.get(0);
+        if (result.isEmpty()) {
+            LoggerUtility.logWarning("Не знайдено м’якої іграшки з ID: " + toyId);
+            return null;
+        }
+        return result.get(0);
     }
 
     @Override
     public List<Toy> load(int toyId) {
         List<Toy> list = new ArrayList<>();
         try {
+            LoggerUtility.logDebug("Виконання SELECT з toy і plush_toy для ID: " + toyId);
+
             String toySql = "SELECT * FROM toy WHERE toy_id = ?";
             PreparedStatement toyStmt = conn.prepareStatement(toySql);
             toyStmt.setInt(1, toyId);
@@ -50,10 +58,15 @@ public class PlushToyLoader implements Loading {
                             plushRs.getInt("width")
                     );
                     list.add(toy);
+                    LoggerUtility.logInfo("✔ Завантажено м’яку іграшку: " + toy.getName());
+                } else {
+                    LoggerUtility.logWarning("✖ Не знайдено запису у plush_toy з ID: " + toyId);
                 }
+            } else {
+                LoggerUtility.logWarning("✖ Не знайдено запису у toy з ID: " + toyId);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LoggerUtility.logError("Помилка під час завантаження м’якої іграшки з ID: " + toyId, e);
         }
         return list;
     }
@@ -62,6 +75,8 @@ public class PlushToyLoader implements Loading {
     public List<Toy> loadAll() {
         List<Toy> list = new ArrayList<>();
         try {
+            LoggerUtility.logInfo("Завантаження всіх м’яких іграшок...");
+
             String sql = """
                 SELECT t.*, p.* FROM toy t
                 JOIN plush_toy p ON t.toy_id = p.plush_toy_id
@@ -84,8 +99,11 @@ public class PlushToyLoader implements Loading {
                 );
                 list.add(toy);
             }
+
+            LoggerUtility.logInfo("✔ Завантажено " + list.size() + " м’яких іграшок.");
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            LoggerUtility.logError("Помилка при завантаженні всіх м’яких іграшок", e);
         }
         return list;
     }

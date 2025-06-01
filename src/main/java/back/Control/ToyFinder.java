@@ -2,6 +2,7 @@ package back.Control;
 
 import back.Toy.Toy;
 import back.Filter.*;
+import back.Log.LoggerUtility;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -10,6 +11,7 @@ public class ToyFinder {
     private final List<Toy> originalToys;
     private List<Toy> filteredToys;
     private final Map<Integer, Filtering> filters = new HashMap<>();
+
     public ToyFinder(List<Toy> toys) {
         this.originalToys = toys;
         this.filteredToys = new ArrayList<>(toys);
@@ -18,21 +20,36 @@ public class ToyFinder {
         filters.put(3, new FilterByMaterial(toys));
         filters.put(4, new FilterBySize(toys));
         filters.put(5, new FilterByAgeRestrictions(toys));
+
+        LoggerUtility.logInfo("ToyFinder ініціалізовано. Доступні фільтри: " + filters.keySet());
     }
 
     public List<Toy> getFilteredToys() {
         return filteredToys;
     }
+
     public boolean filterBy(int paramChoice, String value) {
-        if (!filters.containsKey(paramChoice)) return false;
+        if (!filters.containsKey(paramChoice)) {
+            LoggerUtility.logWarning("Спроба застосувати фільтр з неіснуючим параметром: " + paramChoice);
+            return false;
+        }
+
+        LoggerUtility.logInfo("Застосовується фільтр [" + paramChoice + "] зі значенням: " + value);
         Filtering selectedFilter = filters.get(paramChoice);
-        filteredToys = selectedFilter.filter(value).stream()
+        List<Toy> result = selectedFilter.filter(value);
+
+        int before = filteredToys.size();
+        filteredToys = result.stream()
                 .filter(filteredToys::contains)
                 .collect(Collectors.toList());
+
+        LoggerUtility.logDebug("Результат фільтрації: " + filteredToys.size() + " з " + before);
         return true;
     }
+
     public void reset() {
         filteredToys = new ArrayList<>(originalToys);
+        LoggerUtility.logInfo("Результати фільтрації скинуто. Всього іграшок: " + filteredToys.size());
     }
 
     public static Map<String, Integer> getOptionsMap() {

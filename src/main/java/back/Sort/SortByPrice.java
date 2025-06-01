@@ -1,5 +1,6 @@
 package back.Sort;
 
+import back.Log.LoggerUtility;
 import back.Toy.Toy;
 
 import java.util.Comparator;
@@ -13,7 +14,8 @@ public class SortByPrice implements Sorting{
 
     @Override
     public void sort() {
+        LoggerUtility.logInfo("Сортування іграшок за ціною розпочато...");
         toys.sort(Comparator.comparingInt(Toy::getPrice));
-        System.out.println("Іграшки відсортовано за ціною.");
+        LoggerUtility.logInfo("✔ Іграшки відсортовано за ціною.");
     }
 }

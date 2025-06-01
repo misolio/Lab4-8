@@ -1,5 +1,6 @@
 package back.Sort;
 
+import back.Log.LoggerUtility;
 import back.Toy.Toy;
 
 import java.util.Comparator;
@@ -12,7 +13,8 @@ public class SortByAgeRestrictions implements Sorting{
     }
     @Override
     public void sort() {
+        LoggerUtility.logInfo("Сортування іграшок за віковими обмеженнями розпочато...");
         toys.sort(Comparator.comparingInt(toy -> toy.getAgeRestrictions()));
-        System.out.println("Іграшки відсортовано за віковими обмеженнями.");
+        LoggerUtility.logInfo("✔ Іграшки відсортовано за віковими обмеженнями.");
     }
 }

@@ -1,5 +1,6 @@
 package back.Sort;
 
+import back.Log.LoggerUtility;
 import back.Toy.Toy;
 
 import java.util.Comparator;
@@ -12,7 +13,8 @@ public class SortBySize implements Sorting{
     }
     @Override
     public void sort() {
+        LoggerUtility.logInfo("Сортування іграшок за розміром розпочато...");
         toys.sort(Comparator.comparingInt(Toy::calculateSize));
-        System.out.println("Іграшки відсортовано за розміром.");
+        LoggerUtility.logInfo("✔ Іграшки відсортовано за розміром.");
     }
 }

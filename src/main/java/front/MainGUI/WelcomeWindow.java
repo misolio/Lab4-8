@@ -9,6 +9,16 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class WelcomeWindow {
+    private final boolean modal;
+
+    public WelcomeWindow() {
+        this(true);
+    }
+
+    // Додатковий конструктор для тестів
+    public WelcomeWindow(boolean modal) {
+        this.modal = modal;
+    }
 
     public void show(Stage primaryStage, Runnable onStart) {
         Stage welcomeStage = new Stage();

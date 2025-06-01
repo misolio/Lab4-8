@@ -94,7 +94,7 @@
 }
 
 .dialog-pane .label {
-    -fx-text-fill: #3e2c1c;
+    -fx-text-fill: #614831;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
 }
@@ -102,7 +102,7 @@
 /* Кнопки у вікні */
 .dialog-pane .button {
     -fx-background-color: #eac696;
-    -fx-text-fill: #5c3d2e;
+    -fx-text-fill: #614831;
     -fx-font-weight: bold;
     -fx-background-radius: 8;
     -fx-padding: 8 16 8 16;
@@ -216,7 +216,7 @@
     -fx-border-color: #a47551;
     -fx-border-radius: 10px;             /* ⬅️ Округлі краї рамки */
     -fx-background-radius: 10px;         /* ⬅️ Округлі краї фону */
-    -fx-text-fill: #3e2c1c;
+    -fx-text-fill: #614831;
     -fx-font-size: 14px;
     -fx-padding: 10;
     -fx-margin: 4;                        /* (опційно) для відступів між клітинками */
@@ -233,7 +233,7 @@
     -fx-background-color: #f3d5b5;
     -fx-background-radius: 10px;         /* ⬅️ підтримати округлість */
     -fx-border-radius: 10px;
-    -fx-text-fill: #3e2c1c;
+    -fx-text-fill: #614831;
     -fx-font-weight: bold;
 }
 
@@ -267,7 +267,7 @@
 
 .toy-card-text {
     -fx-font-size: 14px;
-    -fx-fill: #5c3e27;
+    -fx-fill: #614831;
     -fx-text-alignment: justify;
     -fx-wrap-text: true;
 }
@@ -282,12 +282,12 @@
 .welcome-label {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #5c3d2e;
+    -fx-text-fill: #614831;
 }
 
 .welcome-button {
     -fx-background-color: #eac696;
-    -fx-text-fill: #3e2c1c;
+    -fx-text-fill:#614831;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-padding: 10 16 10 16;

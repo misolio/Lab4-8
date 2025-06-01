@@ -12,6 +12,9 @@ target/
 *.iml
 *.ipr
 
+# Java DB config
+src/main/java/Service/DatabaseUtil.java
+
 ### Eclipse ###
 .apt_generated
 .classpath

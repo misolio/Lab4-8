@@ -1,5 +1,6 @@
 package back.Sort;
 
+import back.Log.LoggerUtility;
 import back.Toy.Toy;
 
 import java.util.Comparator;
@@ -12,7 +13,8 @@ public class SortByName implements Sorting{
     }
     @Override
     public void sort() {
+        LoggerUtility.logInfo("Сортування іграшок за ім'ям розпочато...");
         toys.sort(Comparator.comparing(Toy::getName));
-        System.out.println("Іграшки відсортовано за ім'ям.");
+        LoggerUtility.logInfo("✔ Іграшки відсортовано за ім'ям.");
     }
 }
